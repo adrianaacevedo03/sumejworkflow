@@ -1,0 +1,17 @@
+name: Simple Sum Workflow
+
+on: [push]
+
+jobs:
+  sum:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Sum two numbers
+      run: |
+        number1=5
+        number2=10
+        sum=$((number1 + number2))
+        echo "The sum of $number1 and $number2 is $sum"
